@@ -8,47 +8,36 @@
 # 5. close an account 
 # 6. Modify account details
 
-
-
+import Table 
+print(dir(Table))
   
 
 
 def enter_pin():
     """
-    Function to enter the pin for the account
+    This functions will get the account from the table that holds the information for the bank
     """
-    pin = input("Enter your pin: ")
-    return pin
-
-def pin_validation(pin):
-    """
-    Function to validate the pin for the account
-    """
-    # This will be a placeholder for the actual pin validation
-    if pin == "1234":
-        return True
-    else:
-        print("Invalid pin")
-        return False
+    for account in Table.accounts:
+        if account["pin"] == pin:
+            pin = input("Enter your pin: ")
+            return pin
+        else:
+            print("Invalid pin")
+            return None
     
 
 def enter_account_number():
     """
     Function to enter the account number for the account
     """
-    account_number = input("Enter your account number: ")
-    return account_number
+    for account in Table.accounts:
+        if account["account number"] == account_number:
+            account_number = input("Enter your account number: ")
+            return account_number
+        else:
+            print("Invalid account number")
+            return None
 
-def account_number_validation(account_number):
-    """
-    Function to validate the account number for the account
-    """
-    # This will be a placeholder for the actual account number validation
-    if account_number == "123456789":
-        return True
-    else:
-        print("Invalid account number")
-        return False
 
 def user_seleciton():
     """
@@ -69,9 +58,9 @@ def main():
     """
     print("Welcome to the online banking system")
     account_number = enter_account_number()
-    if account_number_validation(account_number):
+    if enter_account_number(account_number):
         pin = enter_pin()
-        if pin_validation(pin):
+        if enter_pin(pin):
             while True:
                 user_selection = user_seleciton()
                 if user_selection == "1":
@@ -84,7 +73,6 @@ def main():
                     create_account()
                 elif user_selection == "5":
                     print("Closing account...")
-                    # This will be a placeholder for the actual account closure
                     print("Account closed")
                     break
                 elif user_selection == "6":
