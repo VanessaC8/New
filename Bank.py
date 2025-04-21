@@ -12,11 +12,8 @@ import Table
 print(dir(Table))
   
 
-
+# This function will be used to enter the pin 
 def enter_pin():
-    """
-    This functions will get the account from the table that holds the information for the bank
-    """
     for account in Table.accounts:
         if account["pin"] == pin:
             pin = input("Enter your pin: ")
@@ -25,11 +22,8 @@ def enter_pin():
             print("Invalid pin")
             return None
     
-
+# This function will be used to enter the account number
 def enter_account_number():
-    """
-    Function to enter the account number for the account
-    """
     for account in Table.accounts:
         if account["account number"] == account_number:
             account_number = input("Enter your account number: ")
@@ -38,11 +32,8 @@ def enter_account_number():
             print("Invalid account number")
             return None
 
-
+# This function will be used to select the user options
 def user_seleciton():
-    """
-    Function to enter the user selection for the account
-    """
     print("1. Check balance")
     print("2. Deposit")
     print("3. Withdraw")
@@ -52,10 +43,8 @@ def user_seleciton():
     user_selection = input("Enter your selection: ")
     return user_selection
 
+# This function will be used to run the main program
 def main():
-    """
-    Main function to run the program
-    """
     print("Welcome to the online banking system")
     account_number = enter_account_number()
     if enter_account_number(account_number):
@@ -84,19 +73,14 @@ def main():
     else:
         print("Invalid account number")
 
-
+# This function will be used to check the balance
 def check_balance():
-    """
-    Function to check the balance of the account
-    """
     # This will be a placeholder for the actual balance
     balance = 1000
     print("Your balance is: ", balance)
 
+# This function will be used to deposit money into the account
 def deposit():
-    """
-    Function to deposit money into the account
-    """
     amount = input("Enter the amount to deposit: ")
     # This will be a placeholder for the actual deposit
     print("Deposited: ", amount)
@@ -105,10 +89,8 @@ def deposit():
     balance += int(amount)
     print("Your new balance is: ", balance)
 
+# This function will be used to withdraw money from the account
 def withdraw():
-    """
-    Function to withdraw money from the account
-    """
     amount = input("Enter the amount to withdraw: ")
     # This will be a placeholder for the actual withdraw
     print("Withdrawn: ", amount)
@@ -117,21 +99,16 @@ def withdraw():
     balance -= int(amount)
     print("Your new balance is: ", balance)
 
-
+# This function will be used to create a new account
 def create_account():
-    """
-    Function to create a new account
-    """
     account_number = input("Enter your new account number: ")
     pin = input("Enter your new pin: ")
     # This will be a placeholder for the actual account creation
     print("Account created with account number: ", account_number)
     print("Your new pin is: ", pin)
 
+# This function will be used to change the account details
 def modify_account_details():
-    """
-    Function to modify account details
-    """
     account_number = input("Enter your account number: ")
     # This will be a placeholder for the actual account modification
     print("Account modified with account number: ", account_number)
