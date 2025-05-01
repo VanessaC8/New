@@ -8,11 +8,8 @@
 # 5. close an account 
 # 6. Modify account details
 
-import Table 
-print(dir(Table))
 
-
-
+  
 
 # This function will be used to enter the pin 
 def enter_pin():

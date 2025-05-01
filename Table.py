@@ -1,13 +1,8 @@
 # This will hold all the information for the bank 
 
+# This will hold all the information for the bank
 class Bank:
-    """
-     Class to represent a bank
-     """
     def __init__(self):
-        """
-         Constructor to initialize the bank
-         """
         self.account_number = 0
         self.pin = 0
         self.balance = 0
